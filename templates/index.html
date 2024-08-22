@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr" >
+<head>
+    <meta charset="UTF-8">
+    <title>Jogos Favoritos</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+    <body>
+        <header>
+
+        </header>
+
+        <main>
+            <p class="title">Jogos Favoritos</p>
+            <a href="/adicionar_games" class="center"><button>Adicionar Jogos</button></a>
+            <div class="container wrap">
+                {% for game in games %}
+                <div class="dados">
+                    <ul class="ul">
+                        <li>Nome: {{game[1]}} <br> Gênero: {{game[2]}}
+                            <ul>
+                                <li class="margindown margintop"><a href="/editar_games/{{ loop.index0 }}"><button class="funcs">Editar</button></a></li>
+                                <li><a href="/apagar_games/{{ loop.index0 }}"><button class="funcs">Apagar</button></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+
+        <footer>
+
+        </footer>
+    </body>
+</html>

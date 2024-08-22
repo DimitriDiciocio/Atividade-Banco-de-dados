@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar jogos</title>
+
+    <link rel="stylesheet" href="../static/css/style.css"></head>
+<body>
+    <h1 class="title">Editar game</h1>
+    <div class="container">
+        <div class="form">
+            <form action="/editar_games/{{ game[0] }}" method="POST">
+                <div>
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" value="{{ game[1] }}">
+                </div>
+                <div>
+                    <label for="genre">Gênero:</label>
+                    <input type="text" id="genre" name="genre" value="{{ game[2] }}">
+                </div>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
